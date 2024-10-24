@@ -40,7 +40,8 @@ final public class Main implements LabRunner {
             int indexAuto = new Random().nextInt(automobiles.size());
             Automobile auto = automobiles.get(indexAuto);
 
-            Order order = new Order(client, auto,14);
+            int numOfRentDays = new Random().nextInt(30);
+            Order order = new Order(client, auto, numOfRentDays);
             OperationStatus status =  administrator.makeDeal(order);
 
             if (status == OperationStatus.WRECKED_CAR) {
